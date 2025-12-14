@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--
+Rest in peace to all of the fallen ones,
+DG Eternal. </3
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lander</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #000;
+            color: #e0cfff;
+            font-family: 'Courier New', monospace;
+            background-image: url('nufiles/estrellastars.gif');
+            background-repeat: repeat;
+            background-size: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .no-scrollbar {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        a {
+            color: #c299ff;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #ff99ff;
+        }
+
+        li::marker {
+            content: "> ";
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #12001f;
+            border: 3px double #ff00ff;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed #ff00ff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            color: #ff77ff;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        marquee {
+            color: #ff00ff;
+            font-weight: bold;
+        }
+
+        .profile {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #ff00ff;
+            border-radius: 4px;
+        }
+
+        .bio {
+            flex: 1;
+        }
+
+        .section {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #1b002b;
+            border: 2px solid #ff00ff;
+        }
+
+        .section h2 {
+            margin: 0 0 10px 0;
+            color: #ff77ff;
+        }
+
+        .friends {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .friend {
+            width: 100px;
+            text-align: center;
+        }
+
+        .friend img {
+            width: 100%;
+            border: 1px solid #ff00ff;
+        }
+
+        .banners,
+        .square-gifs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .banner {
+            width: 100%;
+            max-width: 300px;
+            aspect-ratio: 3 / 1;
+            background-color: #330033;
+            border: 1px solid #ff00ff;
+            overflow: hidden;
+        }
+
+        .square-gif {
+            width: 25%;
+            max-width: 75px;
+            aspect-ratio: 1 / 1;
+            background-color: #990099;
+            border: 1px solid #ff00ff;
+            overflow: hidden;
+        }
+
+        .blinkie-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-start;
+        }
+
+        .blinkie {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            flex: 0 0 auto;
+            overflow: hidden;
+            margin: 6px;
+        }
+
+        .blinkie img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            image-rendering: pixelated;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background-size: 150px auto;
+            }
+
+            .container {
+                width: 95%;
+                min-height: auto;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .profile img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .friend {
+                width: 80px;
+            }
+
+            .banner {
+                max-width: 100%;
+            }
+
+            .blinkie {
+                width: 200px;
+                height: 40px;
+            }
+
+            .square-gif {
+                width: 30%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <pre style="font-size: 10px; color: #ff77ff;">
+&lt;!-- >>=====================================================================<< --&gt;
+&lt;!-- ||     ________       ___    ___ ________  ___  __    ________         || --&gt;
+&lt;!-- ||    |\   ____\     |\  \  /  /|\   ____\|\  \|\  \ |\   __  \        || --&gt;
+&lt;!-- ||    \ \  \___|_    \ \  \/  / | \  \___|\ \  \/  /|\ \  \|\  \       || --&gt;
+&lt;!-- ||     \ \_____  \    \ \    / / \ \_____  \ \   ___  \ \  \\\  \      || --&gt;
+&lt;!-- ||      \|____|\  \    \/  /  /   \|____|\  \ \  \\ \  \ \  \\\  \     || --&gt;
+&lt;!-- ||        ____\_\  \ __/  / /       ____\_\  \ \__\\ \__\ \_______\    || --&gt;
+&lt;!-- ||       |\_________\\___/ /       |\_________\|__| \|__|\|_______|    || --&gt;
+&lt;!-- ||       \|_________\|___|/        \|_________|                        || --&gt;
+&lt;!-- >>=====================================================================<< --&gt;
+
+</pre>
+        </header>
+
+        <marquee id="quoteMarquee" behavior="scroll" direction="right" scrollamount="15"></marquee>
+        <script>
+            const quotes = [
+                "So what if a few people have to die? That's show business, baby!",
+                "Let's dance, darling!",
+                "Well done, darling! You've deactivated all of the bombs!",
+                "Fabulous!",
+                "Oooooh yes!"
+            ];
+            document.getElementById('quoteMarquee').textContent =
+                quotes[Math.floor(Math.random() * quotes.length)];
+        </script>
+
+        <div class="profile">
+            <img src="nufiles/profile.png" alt="Profile Pic">
+            <div class="bio">
+                <small>&#9888; profile picture not drawn by me, I just found it !!!
+                    &#9888;</small>
+                <h2>About Me</h2>
+                <p>Hi my name is Sysko (sometimes Bunny) and I am the most computer</p>
+                <p>Location: In yer house!11!1!!</p>
+            </div>
+        </div>
+
+        <div class="section" id="music">
+            <h2>Songs I listen to a lot</h2>
+            <ul>
+                <li>space.info - Dreamloader</li>
+                <li>I'm Never Looking Back - Pure Snow</li>
+                <li>APPOLON - GHOST MOUNTAIN</li>
+            </ul>
+        </div>
+
+        <div class="section" id="media">
+            <h2>Blinkies</h2>
+            <div class="blinkie-container">
+                <div class="blinkie">
+                    <a href="https://www.glitter-graphics.com">
+                        <img src="http://dl7.glitter-graphics.net/pub/2365/2365577j7wk4iqx04.gif" alt="Blinkie 1">
+                    </a>
+                </div>
+                <div class="blinkie">
+                    <a href="https://www.glitter-graphics.com"><img
+                            src="http://dl2.glitter-graphics.net/pub/1513/1513452p96nwjhb69.gif" width=150 height=50
+                            border=0></a><br><a href="https://www.glitter-graphics.com"
+                        target=_blank>glitter-graphics.com</a>
+                </div>
+                <div class="blinkie" style="width: 165px !important;">
+                    <a href="https://www.glitter-graphics.com"><img
+                            src="http://dl4.glitter-graphics.net/pub/149/149134k6v2leolng.gif" width=150 height=20
+                            border=0></a><br><a href="https://www.glitter-graphics.com"
+                        target=_blank>glitter-graphics.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="friends">
+            <h2>Shoutz + quotes</h2>
+            <div class="friends">
+                <pre style="white-space: pre-wrap; word-wrap: break-word;">
+   @Bear   | >Getting in the middle of my #general chats
+ @Statik  | certified Pwnstar
+ @0xSlayy | ,ban all
+ @108308_ | just because he's a gay man doesn't mean he cant be r00ks girl fr
+  @Rahul  | good morning gay ass white kid
+        </pre>
+            </div>
+        </div>
+
+
+        <div class="section" id="links">
+            <h2>Places</h2>
+            <ul>
+                <li><a href="https://digitalgangster.com/">DigitalGangster</a></li>
+                <li><a href="https://punkgang.net">PunkGang</a></li>
+            </ul>
+        </div>
+
+        <footer>
+            <pre style="text-align: center;">
+(\/)
+  ('w')  
+        </pre>
+        </footer>
+    </div>
+</body>
+
+</html>
