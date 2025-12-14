@@ -215,7 +215,14 @@ DG Eternal. </3
 
     <div class="container">
         <header>
-            <pre style="font-size: 10px; color: #ff77ff;">
+<pre id="asciiArt" style="
+    font-family: 'Courier New', monospace;
+    color: #ff77ff;
+    margin: 0;
+    white-space: pre;
+    overflow: hidden;
+    font-size: 10px;
+">
 &lt;!-- >>=====================================================================<< --&gt;
 &lt;!-- ||     ________       ___    ___ ________  ___  __    ________         || --&gt;
 &lt;!-- ||    |\   ____\     |\  \  /  /|\   ____\|\  \|\  \ |\   __  \        || --&gt;
@@ -226,8 +233,19 @@ DG Eternal. </3
 &lt;!-- ||       |\_________\\___/ /       |\_________\|__| \|__|\|_______|    || --&gt;
 &lt;!-- ||       \|_________\|___|/        \|_________|                        || --&gt;
 &lt;!-- >>=====================================================================<< --&gt;
-
 </pre>
+
+<script>
+const pre = document.getElementById('asciiArt');
+function resizeAscii() {
+    const width = pre.parentElement.offsetWidth;
+    const chars = 75;
+    pre.style.fontSize = Math.min(16, width / chars) + 'px';
+}
+window.addEventListener('load', resizeAscii);
+window.addEventListener('resize', resizeAscii);
+</script>
+
         </header>
 
         <marquee id="quoteMarquee" behavior="scroll" direction="right" scrollamount="15"></marquee>
