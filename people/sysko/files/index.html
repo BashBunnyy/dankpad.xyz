@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dankpad.Xyz / Files</title>
+
+<style>
+* {
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #050807;
+  color: #b8ffcc;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+.page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content {
+  border: 1px solid #1f3a2e;
+  width: 685px;
+  background-color: #0f1714;
+  text-align: left;
+}
+.opt-bottom {
+  background-color: #13221c;
+  color: #d6ffe6;
+  border-bottom: 1px solid #000;
+  padding: 5px 0 5px 6px;
+}
+p {
+  padding: 5px;
+  line-height: 1.5;
+}
+a {
+  color: #7dffb2;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #d6ffe6;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: #1f3a2e;
+  margin: 10px 0;
+}
+.footer {
+  text-align: center;
+  padding: 8px;
+  font-size: 11px;
+  color: #7aa88c;
+  border-top: 1px solid #13221c;
+}
+nav {
+  text-align: center;
+  padding: 12px 0 20px;
+}
+nav a {
+  display: inline-block;
+  margin: 0 6px;
+  padding: 6px 14px;
+
+  color: #b8ffcc;
+  text-decoration: none;
+  font-size: 12px;
+
+  background: #0f1714;
+  border: 1px solid #1f3a2e;
+
+  border-top: 1px solid #2e5a45;
+  border-left: 1px solid #2e5a45;
+  border-right: 1px solid #0a120f;
+  border-bottom: 1px solid #0a120f;
+
+  box-shadow: 1px 1px 0 #000;
+  transition: 0.1s;
+}
+nav a::before {
+  content: "[ ";
+  color: #2e5a45;
+}
+nav a::after {
+  content: " ]";
+  color: #2e5a45;
+}
+nav a:hover {
+  background: #13221c;
+  color: #d6ffe6;
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0 #000;
+}
+nav a:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0px 0px 0 #000;
+  border-top: 1px solid #0a120f;
+  border-left: 1px solid #0a120f;
+  border-right: 1px solid #2e5a45;
+  border-bottom: 1px solid #2e5a45;
+}
+.section {
+  padding: 8px;
+  border-bottom: 1px solid #1f3a2e;
+}
+.file {
+  padding: 6px;
+  border-bottom: 1px dashed #1f3a2e;
+}
+.file:hover {
+  background: #0c1411;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+  <div class="main">
+
+    <img src="../../../media/head.png" width="494">
+    <hr>
+
+    <div class="content">
+
+      <div class="opt-bottom">
+        <strong>/sysko</strong>
+      </div>
+
+      <p>
+        Projects, tools, random dumps, and misc uploads live here.
+      </p>
+
+      <div class="section">
+        <div class="file"><a href="./projects/index.html">projects/</a> - programs, tools, experiments</div>
+        <div class="file"><a href="./warez/index.html">warez/</a> - software dumps & archives</div>
+        <div class="file"><a href="./random/index.html">random/</a> - turds</div>
+      </div>
+
+      <div class="section">
+        <div class="file"><a href="../../../people/index.html">back</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  © 2026 Dankpad.Xyz. All rights reserved.
+</div>
+
+</body>
+</html>

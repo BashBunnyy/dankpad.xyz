@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dankpad.Xyz</title>
+
+<style>
+* {
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #050807;
+  color: #b8ffcc;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+.page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+.layout {
+  display: flex;
+  align-items: flex-start;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content {
+  border: 1px solid #1f3a2e;
+  width: 685px;
+  background-color: #0f1714;
+  text-align: left;
+}
+.opt-bottom {
+  background-color: #13221c;
+  color: #d6ffe6;
+  border-bottom: 1px solid #000;
+  padding: 5px 0 5px 6px;
+}
+p {
+  padding: 5px;
+  line-height: 1.5;
+}
+a {
+  color: #7dffb2;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #d6ffe6;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: #1f3a2e;
+  margin: 10px 0;
+}
+.footer {
+  text-align: center;
+  padding: 8px;
+  font-size: 11px;
+  color: #7aa88c;
+  border-top: 1px solid #13221c;
+}
+
+@media (max-width: 900px) {
+  .content {
+    width: 100%;
+  }
+}
+#rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+.rain-img {
+  position: absolute;
+  top: -50px;
+  width: 40px;
+  opacity: 0.85;
+  animation: fall linear forwards;
+}
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+nav {
+  text-align: center;
+  padding: 12px 0 20px;
+}
+nav a {
+  display: inline-block;
+  margin: 0 6px;
+  padding: 6px 14px;
+  color: #b8ffcc;
+  text-decoration: none;
+  font-size: 12px;
+  background: #0f1714;
+  border: 1px solid #1f3a2e;
+  border-top: 1px solid #2e5a45;
+  border-left: 1px solid #2e5a45;
+  border-right: 1px solid #0a120f;
+  border-bottom: 1px solid #0a120f;
+  box-shadow: 1px 1px 0 #000;
+  transition: 0.1s;
+}
+nav a::before {
+  content: "[ ";
+  color: #2e5a45;
+}
+nav a::after {
+  content: " ]";
+  color: #2e5a45;
+}
+nav a:hover {
+  background: #13221c;
+  color: #d6ffe6;
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0 #000;
+}
+nav a:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0px 0px 0 #000;
+  border-top: 1px solid #0a120f;
+  border-left: 1px solid #0a120f;
+  border-right: 1px solid #2e5a45;
+  border-bottom: 1px solid #2e5a45;
+}
+</style>
+
+<script>
+const baseTitle = "Dankpad.Xyz";
+let i = 0;
+
+function typeTitle() {
+  document.title = baseTitle.slice(0, i);
+
+  if (i < baseTitle.length) {
+    i++;
+    setTimeout(typeTitle, 200);
+  }
+}
+
+typeTitle();
+</script>
+
+</head>
+
+<body>
+
+<div id="rain-container"></div>
+
+<div class="page">
+  <div class="layout">
+
+    <div class="main">
+      <br><br>
+      <img src="media/head.png" width="494">
+      <div id="quoteBox"></div>
+      <!--Limit of 2 quotes per user, if you're seeing this. You can also send me requests to add your own quote. Must have a username, don't care if it's a string of bullshit. These are also direct quotes, some altered to be..less offensive. But if there's typo's it's supposed to be there.-->
+      <script>
+          const quotes = [
+              "Sysko smack you on the head yeah bitch we are the fucking 13373$7.",
+              "<i>wiggels to the left, wiggles to the right.</i> -<b>YeBird</b>",
+              "i'm a rapper not a english teacher, roflmao -<b></b>",
+              "god sent me -<b>Sysko</b>",
+              "just because he's a gay man doesn't mean he can't be r00ks girl fr -<b>108308_</b>",
+              "Good morning gay ass white kid -<b>Rahul</b>",
+              "never forget this - you alone are part of the best group of nerds to ever live and are capable of inflicting massive change and making endless money -<i>redacted</i>",
+              "I knew if I called you gay a few times, you'd get psyoped into questioning your sexuality. -<b>SPECTRAX</b>",
+              "I was like i'll do the coke,<br>not gonna fuck you. -<b>doc_</b>",
+              "You cant even spell believe no shit we're not on the same level -<b>Sysko</b>",
+              "I dont want to ask CHATGPT we had an argument -<b>1</b>",
+              "dude fuck him and fuck you too -<b>CSA Machineman</b>",
+              "<b>BlueBoy</b>  > 3rupee.png<br><b>Rin</b>  > Thats like 3 pesos<br><b>Blueboy</b> > Mumbai is rich<br><b>Rin</b> > <i>redacted</i> thats the equivalent to 2 cens<br><b>BlueBoy</b> > No it's not"
+          ];
+
+
+        document.getElementById('quoteBox').innerHTML =
+            quotes[Math.floor(Math.random() * quotes.length)];
+      </script>
+      <hr>
+
+      <br>
+
+      <div class="content">
+        <div class="opt-bottom">
+          <strong>/home</strong>
+        </div>
+
+        <p>
+          Welcome.<br><br>
+          This space is used to collect and share code, documentation, and other resources.<br><br>
+          Currently, this is a personal project but is intended to grow into a shared environment where collaborators can contribute and organize material together. Over time, it may include a mix of notes, tools, references, and various projects.
+        </p>
+      </div>
+      <nav>
+        <a href="people/index.html">people</a>
+        <a href="zine/index.html">zine</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  © 2026 Dankpad.Xyz. All rights reserved.
+</div>
+
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("rain-container");
+
+  function spawnImage() {
+    const img = document.createElement("img");
+	
+    img.src = "media/plant.png";
+    img.className = "rain-img";
+    img.style.left = Math.random() * 100 + "vw";
+	
+    const size = 20 + Math.random() * 40;
+    img.style.width = size + "px";
+    const duration = 5 + Math.random() * 5;
+	
+    img.style.animationDuration = duration + "s";
+    container.appendChild(img);
+    setTimeout(() => {
+     img.remove();
+    }, duration * 1000);
+  }
+  setInterval(spawnImage, 420);
+});
+</script>
+
+</body>
+</html>	
